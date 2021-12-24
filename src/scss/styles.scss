@@ -1,5 +1,99 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$white: #fcfcfc;
+$dark-blue: #3b3355;
+$light-blue: #5d5d81;
 
+* {
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
+  width: 100%;
   font-family: Rubik, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding: 5vh 5vw;
+}
+header {
+  .header-top {
+    display: flex;
+    flex-direction: row;
+    height: 16vh;
+    margin-bottom: 4vh;
+  }
+  .logo-image {
+    display: block;
+    height: 100%;
+    flex-grow: 1;
+  }
+  .date-display-box {
+    text-align: right;
+    display: block;
+    height: 100%;
+    flex-grow: 1;
+    %date-display-texts {
+      font-weight: 100;
+      width: 100%;
+      line-height: 1;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    .weekday-display {
+      @extend %date-display-texts;
+      font-size: 2.5em;
+    }
+    .date-display {
+      @extend %date-display-texts;
+      font-size: 1em;
+    }
+  }
+  .todo-count-message {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 4vh;
+  }
+}
+
+main {
+  .add-todo-button {
+    font-family: "Rubik Mono One", sans-serif;
+    border: none;
+    outline: none;
+    padding: none;
+    border-radius: 0.2em;
+    background-color: $dark-blue;
+    color: $white;
+    display: inline-block;
+    line-height: 2rem;
+    width: 2.1rem;
+    text-align: center;
+    vertical-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    transition: transform 0.2s ease-out;
+    &:hover {
+      transform: scale(1.2);
+      transition: transform 0.2s ease-out;
+      cursor: pointer;
+      & + .add-todo-button-label {
+        opacity: 1;
+        transition: opacity 0.2s;
+      }
+    }
+    &:active {
+      background-color: $light-blue;
+    }
+  }
+  .add-todo-button-label {
+    color: $dark-blue;
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
 }
