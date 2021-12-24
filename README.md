@@ -7,3 +7,4 @@ This is a simple to-do app made with native js technologies.
 ## Progress
 
 - [x] Static HTML Build
+- [ ] Add stylesheet to Static Build
