@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Do - Vanilla JS</title>
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="../src/assets/img/logo.svg" alt="2Do Logo">
+        <div class="date-display-box">
+            <h1 class="weekday-display">
+                Csütörtök
+            </h1>
+            <h2 class="date-display">2021.12.23</h2>
+        </div>
+        <h3 class="todo-count-message">19 to-dos today</h3>
+    </header>
+    <main>
+        <button type="button"class="add-todo-button">+</button><span class="add-todo-button-label">Add to-do</span>
+        <form class="add-todo-form">
+            <label for="todo-name-input">What do you need to get done?</label>
+            <input type="text" name="todo-name-input" id="todo-name-input">
+            <button type="button">✅</button>
+        </form>
+        <ul class="todo-container">
+            <li class="todo">
+                <span class="todo-icon">🌱</span>
+                <span class="todo-label">Water the plant</span>
+                <input type="checkbox" />
+            </li>
+            <li class="todo">
+                <span class="todo-icon">🐶</span>
+                <span class="todo-label">strikethrough Feed the puppies</span>
+                <input type="checkbox" checked/>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        Made by <a href="https://github.com/vikorbogdan">@vikorbogdan</a>
+    </footer>
+</body>
+<script type="module" src="./js/index.js"></script>
+</html>
