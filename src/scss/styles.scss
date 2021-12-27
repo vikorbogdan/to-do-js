@@ -2,6 +2,35 @@
 $white: #fcfcfc;
 $dark-blue: #3b3355;
 $light-blue: #5d5d81;
+.strikethrough {
+  text-decoration: line-through;
+}
+%emboss {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25),
+    inset 0px 0px 15px rgba(58, 40, 40, 0.1);
+}
+%button-base-theme {
+  font-family: Rubik, sans-serif;
+  border: none;
+  outline: none;
+  padding: none;
+  border-radius: 0.2em;
+  background-color: $dark-blue;
+  color: $white;
+  display: inline-block;
+  text-align: center;
+
+  font-size: 1.5em;
+  transition: transform 0.2s ease-out;
+}
+%button-base-theme:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-out;
+  cursor: pointer;
+}
+%button-base-theme:active {
+  background-color: $light-blue;
+}
 
 * {
   margin: 0;
@@ -12,6 +41,7 @@ $light-blue: #5d5d81;
   box-sizing: border-box;
 }
 body {
+  background-color: $white;
   width: 100%;
   font-family: Rubik, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -60,32 +90,18 @@ header {
 
 main {
   .add-todo-button {
+    @extend %button-base-theme;
     font-family: "Rubik Mono One", sans-serif;
-    border: none;
-    outline: none;
-    padding: none;
-    border-radius: 0.2em;
-    background-color: $dark-blue;
-    color: $white;
-    display: inline-block;
+
     line-height: 2rem;
     width: 2.1rem;
     text-align: center;
     vertical-align: center;
     font-weight: bold;
     font-size: 1.5em;
-    transition: transform 0.2s ease-out;
-    &:hover {
-      transform: scale(1.2);
-      transition: transform 0.2s ease-out;
-      cursor: pointer;
-      & + .add-todo-button-label {
-        opacity: 1;
-        transition: opacity 0.2s;
-      }
-    }
-    &:active {
-      background-color: $light-blue;
+    &:hover + .add-todo-button-label {
+      opacity: 1;
+      transition: opacity 0.2s;
     }
   }
   .add-todo-button-label {
@@ -96,4 +112,76 @@ main {
     opacity: 0;
     transition: opacity 0.2s;
   }
+  .add-todo-form {
+    @extend %emboss;
+    margin: 20px auto;
+    background-color: $light-blue;
+    display: block;
+    border-radius: 20px;
+    padding: 10px;
+    color: $white;
+    text-align: center;
+    #todo-name-input {
+      display: block;
+      margin: 2vh auto;
+      width: 95%;
+      height: 4vh;
+      font-family: Rubik, sans-serif;
+      padding: 10px;
+    }
+    #emoji-selector {
+      display: block;
+      margin: 2vh auto;
+    }
+    .todo-send-input {
+      @extend %button-base-theme;
+      padding: 3px 10px;
+      font-weight: 500;
+    }
+  }
+  .todo-container {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: auto;
+    flex: 1;
+    height: 39vh;
+    scrollbar-width: none;
+    .todo {
+      @extend %emboss;
+      .todo-icon {
+        user-select: none;
+        font-size: 2em;
+        display: block;
+      }
+      .todo-label {
+        font-size: 1em;
+        display: block;
+        font-weight: 500;
+      }
+      .todo-check {
+        cursor: pointer;
+        display: block;
+        width: 10%;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+      }
+      background-color: $white;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5%;
+      margin: 0.5vh 0;
+      height: 13vh;
+      line-height: 13vh;
+      width: 100%;
+    }
+  }
+}
+
+footer {
+  text-align: center;
 }

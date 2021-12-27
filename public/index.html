@@ -22,23 +22,48 @@
             <h3 class="todo-count-message">19 to-dos today</h3>
     </header>
     <main>
-        <button type="button"class="add-todo-button">+</button>
-        <span class="add-todo-button-label">Add to-do</span>
+        <button type="button"class="add-todo-button">+</button><span class="add-todo-button-label">Add to-do</span>
         <form class="add-todo-form">
             <label for="todo-name-input">What do you need to get done?</label>
             <input type="text" name="todo-name-input" id="todo-name-input">
-            <button type="button">✅</button>
+            <label for="emoji-selector">Choose an emoji as icon:</label>
+            <select name="emoji-selector" id="emoji-selector">
+                <option value="🌱">🌱</option>
+                <option value="🐶">🐶</option>
+                <option value="👻">👻</option>
+            </select>
+            <button class="todo-send-input" type="button">Send</button>
         </form>
         <ul class="todo-container">
             <li class="todo">
                 <span class="todo-icon">🌱</span>
                 <span class="todo-label">Water the plant</span>
-                <input type="checkbox" />
+                <input class="todo-check" type="checkbox" />
             </li>
             <li class="todo">
                 <span class="todo-icon">🐶</span>
-                <span class="todo-label">strikethrough Feed the puppies</span>
-                <input type="checkbox" checked/>
+                <span class="todo-label strikethrough">Feed the puppies</span>
+                <input class="todo-check" type="checkbox" checked/>
+            </li>
+            <li class="todo">
+                <span class="todo-icon">🐶</span>
+                <span class="todo-label strikethrough">Feed the puppies</span>
+                <input class="todo-check" type="checkbox" checked/>
+            </li>
+            <li class="todo">
+                <span class="todo-icon">🐶</span>
+                <span class="todo-label strikethrough">Feed the puppies</span>
+                <input class="todo-check" type="checkbox" checked/>
+            </li>
+            <li class="todo">
+                <span class="todo-icon">🐶</span>
+                <span class="todo-label strikethrough">Feed the puppies</span>
+                <input class="todo-check" type="checkbox" checked/>
+            </li>
+            <li class="todo">
+                <span class="todo-icon">🐶</span>
+                <span class="todo-label strikethrough">Feed the puppies</span>
+                <input class="todo-check" type="checkbox" checked/>
             </li>
         </ul>
     </main>
